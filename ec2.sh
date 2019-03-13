@@ -15,6 +15,7 @@ keypair_name=$2
 Instance_type=$3
 subnetid=$4
 region_name=$5
+launchid=$6
 
 launch_ec2()
 {
