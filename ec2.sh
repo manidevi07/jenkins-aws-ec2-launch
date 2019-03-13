@@ -35,7 +35,7 @@ grep InstanceId ec2.txt | tr -d '", "' > InstanceId
 sed -i 's/:/=/g' InstanceId
 launchid=$( cat InstanceId )
 echo "instance id is $lanunchid"
-echo "aws ec2 create-tags --resources ""$"InstanceId" --tags Key=$6,Value=$7 --region $region_name" >> InstanceId
+echo "aws ec2 create-tags --resources ""$"InstanceId" --tags Key=$Key_Name,Value=$Key_Name_Value --region $region_name" >> InstanceId
 chmod +x InstanceId
 ./InstanceId
 echo " Instance is launched"
