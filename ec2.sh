@@ -30,7 +30,7 @@ instancespec()
 sleep 3
 grep InstanceId ec2.txt | tr -d '", "' > InstanceId
 sed -i 's/:/=/g' InstanceId
-echo "aws ec2 create-tags --resources ""$"InstanceId" --tags Key=$Key_Name,Value=$Key_Name_Value --region $region_name" >> InstanceId
+echo "aws ec2 create-tags --resources ""$"InstanceId" --tags Key="${ Key_Name }",Value="${ Key_Name_Value }" --region $region_name" >> InstanceId
 chmod +x InstanceId
 ./InstanceId
 echo " Instance is launched"
