@@ -28,6 +28,7 @@ instancespec()
 sleep 3
 grep InstanceId ec2.txt | tr -d '", "' > InstanceId
 sed -i 's/:/=/g' InstanceId
+cat InstanceId > LaunchInstanceID
 echo "aws ec2 create-tags --resources ""$"InstanceId"  --tags Key=Name,Value=Web1 --region $region_name" >> InstanceId
 chmod +x InstanceId
 ./InstanceId
