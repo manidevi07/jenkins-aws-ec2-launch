@@ -15,6 +15,9 @@ keypair_name=$2
 Instance_type=$3
 subnetid=$4
 region_name=$5
+Key_Name=$6
+Key_Name_Value=$7
+
 //launchid=$6
 
 
@@ -32,7 +35,7 @@ grep InstanceId ec2.txt | tr -d '", "' > InstanceId
 sed -i 's/:/=/g' InstanceId
 launchid=$( cat InstanceId )
 echo "instance id is $lanunchid"
-echo "aws ec2 create-tags --resources ""$"InstanceId"  --tags Key=Name,Value=Web1 --region $region_name" >> InstanceId
+echo "aws ec2 create-tags --resources ""$"InstanceId"  --tags Key=$6,Value=$7 --region $region_name" >> InstanceId
 chmod +x InstanceId
 ./InstanceId
 echo " Instance is launched"
